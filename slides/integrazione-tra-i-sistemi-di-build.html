@@ -1,0 +1,84 @@
+<section>
+    <h1>Integrazione tra i sistemi di build</h1>
+
+    <p>Ovvero come buildo tutto con <code>'mvn install'</code></p>
+</section>
+
+<section>
+    <h2>Creazione progetto Java EE</h2>
+
+    <pre class="fragment">
+        <code>
+            mvn archetype:generate
+            -DarchetypeGroupId=org.apache.openejb.maven
+            -DarchetypeArtifactId=tomee-webapp-archetype
+            -DarchetypeVersion=1.7.0
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2>Creazione progetto AngularJS</h2>
+
+    <p class="fragment">Il nostro front-end lo creiamo usando <cite>Yeoman</cite> ed uno dei suoi generatori</p>
+
+    <pre class="fragment">
+        <code>
+            cd src/main
+            mkdir yo && cd $_
+            yo angular
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2>Build di un progetto Web</h2>
+
+    <p class="fragment">Dobbiamo lanciare questi tre comandi:
+    </p>
+    <pre class="fragment">
+        <code>
+            npm install     # solo la prima volta
+            bower install   # solo se si aggiunge una dipendenza
+            grunt build
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2>Yeoman Maven Plugin</h2>
+
+    <p>Integra il processo di build di Maven con quello di Yeoman</p>
+
+    <pre class="fragment">
+        <code>
+            <plugin>
+                <groupId>com.github.trecloux</groupId>
+                <artifactId>yeoman-maven-plugin</artifactId>
+                <version>0.2</version>
+            </plugin>
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2>Inoltre</h2>
+
+    <p class="fragment">Lo WAR prodotto da Maven deve comprendere il 'compilato' JavaScript</p>
+
+    <pre class="fragment">
+        <code>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/yo/dist</directory>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+        </code>
+    </pre>
+
+</section>

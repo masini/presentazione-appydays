@@ -1,0 +1,92 @@
+<section>
+    <h2>Due runtime insieme</h2>
+
+    <p>Due server, una sola url</p>
+</section>
+<section>
+    <h3>Proxy da Node.js a Java EE Runtime</h3>
+
+    <p>Installiamo il modulo per proxare da Grunt</p>
+
+    <pre class="fragment">
+        <code>
+
+            npm install grunt-connect-proxy --save-dev
+
+        </code>
+    </pre>
+
+</section>
+<section data-transition="none">
+    <h3>Modifichiamo il Gruntfile.js</h3>
+
+    <div class="fragment">
+        <p>Aggiungendo la dipendenza RequireJS
+
+        </p>
+
+    <pre>
+        <code>
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+        </code>
+    </pre>
+    </div>
+</section>
+<section data-transition="none">
+    <h3>Configurando il downstream server</h3>
+    <pre>
+        <code data-trim>  connect: {
+      proxies: [
+        {
+          context: '/resources',
+          host: 'localhost',
+          port: 8080,
+          https: false,
+          changeOrigin: false
+        }
+      ],
+..
+..
+      livereload: {
+        options: {
+          middleware: function (connect) {
+            return [
+              proxySnippet,
+              lrSnippet,
+              mountFolder(connect, '.tmp'),
+              mountFolder(connect, yeomanConfig.app)
+            ];
+          }
+        }
+      },
+        </code>
+    </pre>
+</section>
+<section data-transition="none">
+    <h3>Aggiungendo lo step all'avvio del server</h3>
+    <pre>
+        <code>
+  grunt.registerTask('server', [
+    'clean:server',
+    ..
+    ..
+    'configureProxies', // add this line
+    'livereload-start',
+    ..
+    ..
+    'watch'
+  ]);
+
+        </code>
+    </pre>
+</section>
+<section data-transition="none">
+    <h2>Iniziamo a sviluppare</h3>
+    <pre>
+        <code>
+            grunt serve
+        </code>
+    </pre>
+    <p>Ad ogni modifica dei sorgenti HTML/CSS/JavaScript un servizio di watch aggiorna automaticamente il browser</p>
+    <p class="fragment">Non si deve neanche fare CMD-R (o F5) :)</p>
+</section>

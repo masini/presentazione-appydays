@@ -1,0 +1,103 @@
+<section>
+    <h1>Sviluppo servizi<br/>
+        Enterprise</h1>
+
+    <p>Possiamo rendere agile Java EE ?</p>
+</section>
+
+<section>
+    <h2>Agile ???</h2>
+
+    <p>Qui non si parla di <cite>/ˈædʒaɪl/</cite> !</p>
+
+    <p class="fragment">Ma proprio di rendere efficace e veloce lo sviluppo, scrivendo codice e provando in quasi tempo-reale</p>
+
+</section>
+
+<section data-transition="none">
+    <h2>TomEE come container</h2>
+
+    <p>Ci permette di sviluppare applicazioni in un contesto ricco di funzionalita come Java EE6, consolidato da ormai 5 anni e dunque disponibile in ogni contesto aziendale</p>
+
+</section>
+<section data-transition="none">
+    <h2>TomEE come container</h2>
+
+    <p>Si avvia in meno di 2 secondi, utilizzando pochissime risorse della workstation</p>
+</section>
+<section>
+    <h2>Kilobytes Deployment</h2>
+
+    <ul>
+        <li class="fragment">Java EE 6 contiene "tutto" il necessario per lo sviluppo lato server</li>
+        <li class="fragment">I nostri deployment quindi sono molto leggeri, nell'ordine di alcuni kilobyte, durante lo sviluppo</li>
+        <li class="fragment">I tempi di redeploy quindi possono essere nell'ordine dei millisecondi</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Modalità sviluppo di TomEE</h2>
+
+    <ul>
+        <li class="fragment">Abilitarla ci permette di non dover fare il packaging dell'applicazione durante lo sviluppo</li>
+        <li class="fragment">Risparmiamo anche il tempo di esecuzione di <code>mvn install</code></li>
+    </ul>
+</section>
+<section>
+    <h2>TomEE plugin</h2>
+
+    <pre>
+        <code>
+            <plugin>
+                <groupId>org.apache.openejb.maven</groupId>
+                <artifactId>tomee-maven-plugin</artifactId>
+                <version>1.7.0</version>
+                <configuration>
+                    <tomeeClassifier>jaxrs</tomeeClassifier>
+                    <simpleLog>true</simpleLog>
+                    <context>ROOT</context>
+                    <webappDefaultConfig>true</webappDefaultConfig>
+                    <args>
+                        -XXaltjvm=dcevm -noverify -Dopenejb.jsf.skip=true
+                    </args>
+                </configuration>
+            </plugin>
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2>TomEE plugin: configurazioni</h2>
+
+    <ul>
+        <li><strong>jaxrs</strong> è l'edizione di TomEE, ne esistono per tutti i gusti</li>
+        <li>Logging semplificato durante lo sviluppo con <strong>simpleLog</strong></li>
+        <li><strong>webappDefaultConfig</strong> &egrave; la configurazione che ci permette di evitare il packaging</li>
+        <li>Con <strong>-Dopenejb.jsf.skip=true</strong> disabilitiamo JSF</li>
+        <br/>
+        <li class="fragment">E <strong>-XXaltjvm=dcevm</strong> ??</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Dynamic Code Evolution VM</h2>
+
+    <ul>
+        <li>&Egrave; una JVM modificata in grado di permettere la ridefinizione delle classi caricate dal classloader, tra cui:
+            <ul>
+                <li>ridefinizione del corpo dei metodi (come Hotspot)</li>
+                <li>aggiunta e rimozione dei field e dei metodi</li>
+                <li>modifica alla gerarchia delle classi</li>
+            </ul>
+        </li>
+        <br/>
+        <li class="fragment"><strong>Ovviamente si abilita solo sui server di sviluppo</strong></li>
+    </ul>
+</section>
+<section>
+    <h2>Dynamic Code Evolution VM</h2>
+
+    <p>CMD-F9 (CMD-S con IDE legacy) e tutte le nostre modifiche al codice sono disponibili senza dover fare redeploy durante lo sviluppo, se non in caso di cambio di configurazione applicativa</p>
+</section>
+
+
