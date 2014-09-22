@@ -10,9 +10,8 @@
     <ul>
         <li class="fragment">TypeSafe ci ha visto lontano rendendo lo sviluppo Java Enterprise come quello PHP/Rails/<q>&lt;altro framework cool a San Francisco&gt;</q>
             <ul>
-                <li>Peccato che la versione 2.0 si sia molto orientata verso Scala</li>
-                <li>A parte pochi casi di studio, le nostre aziende non hanno ancora la cultura giusta ad abbracciarlo</li>
-                <li></li>
+                <li class="fragment">Peccato che la versione 2.0 si sia molto orientata verso Scala</li>
+                <li class="fragment">A parte pochi casi di studio, le nostre aziende non hanno ancora la cultura giusta ad abbracciarlo</li>
             </ul>
         </li>
 
@@ -25,3 +24,69 @@
     <blockquote>JHipster is a Yeoman generator, used to create a Maven + Spring + AngularJS project, with full hot reload of Java and JavaScript code.</blockquote>
 
 </section>
+
+<section>
+    <h2>JHipster ha tutto ci&ograve; che ci serve</h2>
+
+    <ul>
+        <li class="fragment">
+            Un generatore Yeoman in grado di metterci a disposizione un progetto Maven/Gradle con:
+            <ul>
+                <li class="fragment">Ecosistema di build Web (npm/bower/grunt) integrato con Maven/Gradle</li>
+                <li class="fragment">Runtime Grunt integrato con Runtime Java</li>
+            </ul>
+
+        </li>
+
+    </ul>
+</section>
+
+<section>
+    <h2>JHipster ha tutto ci&ograve; che ci serve</h2>
+
+    <ul>
+        <li class="fragment">
+            Un agent (evoluzione di Spring Loaded) in grado di:
+            <ul>
+                <li class="fragment">Ricaricare classi/metodi/field</li>
+                <li class="fragment">Aggiornare i Service/Component di Spring</li>
+                <li class="fragment">Modificare l'EntityManager alla modifica di un entity</li>
+                <li class="fragment">Mappare le nuove URL Spring MVC REST</li>
+                <li class="fragment">Flushare la cache di Jackson se modifichiamo un POJO</li>
+            </ul>
+
+        </li>
+
+    </ul>
+</section>
+
+<section>
+    <h2>Ma allora perch&egrave; non usarlo ?</h2>
+
+    <h1 class="fragment">USATELO !!</h1>
+    <ul>
+        <li class="fragment">Se il vostro framework di riferimento è Spring</li>
+        <li class="fragment">Se state facendo un prodotto e non un applicativo interno</li>
+        <li class="fragment">Se avere un uso di circa 100MB di Permanent Generation non è un problema <span class="fragment">(beati voi !!)</span></li>
+    </ul>
+</section>
+<section>
+    <h2>Quando non ne vale la pena ?</h2>
+
+    <ul>
+        <li class="fragment">Se il vostro framework di riferimento è Java EE >=6 </li>
+        <li class="fragment">Se le vostre operation non sono abbastanza "DevOps"</li>
+        <li class="fragment">Se sul vostro Application Server girano abbastanza applicazioni da non potervi permettere tutte le librerie che si porta dietro Spring</li>
+    </ul>
+
+    <p>&nbsp</p>
+    <p class="fragment">
+        <strong>O pi&uacute; semplicemente perch&egrave; non sopportate i baffetti da Hipster !!!</strong>
+    </p>
+    <p class="fragment">
+        <img src="img/hipster_trasp.png" />
+    </p>
+
+
+</section>
+

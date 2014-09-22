@@ -90,6 +90,19 @@
             });
         </script>
 
+        <div class="share-reveal" style="display: none; position: absolute; bottom: 14px; left: 50%; margin-left: -230px; z-index: 20;">
+            <a href="https://twitter.com/lmasini" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @lmasini</a>
+        </div>
+
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+        <script>
+            if( !navigator.userAgent.match( /(iphone|android)/gi ) && !!document.querySelector ) {
+                document.querySelector( '.share-reveal' ).style.display = 'block';
+                //document.querySelector( '.fork-reveal' ).style.display = 'block';
+            }
+        </script>
+
     </body>
 
 </html>
