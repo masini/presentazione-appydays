@@ -11,7 +11,7 @@
     <pre class="fragment">
         <code>
 
-            npm install grunt-connect-proxy --save-dev
+            npm install grunt-connect-pro&#120;y --save-dev
 
         </code>
     </pre>
@@ -27,7 +27,7 @@
 
     <pre>
         <code>
-var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+var pro&#120;ySnippet = require('grunt-connect-pro&#120;y/lib/utils').pro&#120;yRequest;
         </code>
     </pre>
     </div>
@@ -51,7 +51,7 @@ var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
         options: {
           middleware: function (connect) {
             return [
-              proxySnippet,
+              pro&#120;ySnippet,
               lrSnippet,
               mountFolder(connect, '.tmp'),
               mountFolder(connect, yeomanConfig.app)
@@ -88,5 +88,6 @@ var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
         </code>
     </pre>
     <p>Ad ogni modifica dei sorgenti HTML/CSS/JavaScript un servizio di watch aggiorna automaticamente il browser</p>
+    <br/>
     <h3 class="fragment">Non si deve neanche fare CMD-R (o F5) :)</h3>
 </section>

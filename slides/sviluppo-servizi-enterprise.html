@@ -10,7 +10,11 @@
 
     <p>Qui non si parla di <cite>/ˈædʒaɪl/</cite> !</p>
 
-    <p class="fragment">Ma proprio di rendere efficace e veloce lo sviluppo, scrivendo e provando il codice in <strong class="fragment">quasi</strong> tempo-reale</p>
+    <p>&nbsp;</p>
+
+    <p class="arancione fragment">Ma di rendere efficace e veloce lo sviluppo, scrivendo e provando il codice in tempo-reale</p>
+    <p>&nbsp;</p>
+    <h1 class="fragment fade-in">Quasi tempo reale</h1>
 
 </section>
 
@@ -23,15 +27,18 @@
 <section data-transition="none">
     <h2>TomEE come container</h2>
 
-    <p>Si avvia in meno di 2 secondi, utilizzando pochissime risorse della workstation</p>
+    <p>Si avvia in meno di 2 secondi, utilizzando pochissime risorse della workstation...</p>
+
+    <p class="fragment fade-in giallino">...con i parametri di default della memoria della JVM !!!</p>
+
 </section>
 <section>
     <h2>Kilobytes Deployment</h2>
 
     <ul>
         <li class="fragment">Java EE 6 contiene "tutto" il necessario per lo sviluppo lato server</li>
-        <li class="fragment">I nostri deployment quindi sono molto leggeri, nell'ordine di alcuni kilobyte, durante lo sviluppo</li>
-        <li class="fragment">I tempi di redeploy quindi possono essere nell'ordine dei millisecondi</li>
+        <li class="fragment">I nostri deployment quindi sono molto leggeri, nell'ordine di alcuni <b class="arancione">kilobyte</b>, durante lo sviluppo</li>
+        <li class="fragment">I tempi di redeploy quindi possono essere nell'ordine dei <b class="arancione">millisecondi</b></li>
     </ul>
 </section>
 
@@ -71,12 +78,12 @@
     <h2>TomEE plugin: configurazioni</h2>
 
     <ul>
-        <li><strong>jaxrs</strong> è l'edizione di TomEE, ne esistono per tutti i gusti</li>
-        <li>Logging semplificato durante lo sviluppo con <strong>simpleLog</strong></li>
-        <li><strong>webappDefaultConfig</strong> &egrave; la configurazione che ci permette di evitare il packaging</li>
-        <li>Con <strong>-Dopenejb.jsf.skip=true</strong> disabilitiamo JSF</li>
+        <li><strong class="giallino">jaxrs</strong> è l'edizione di TomEE, ne esistono per tutti i gusti</li>
+        <li>Logging semplificato durante lo sviluppo con <strong class="giallino">simpleLog</strong></li>
+        <li><strong class="giallino">webappDefaultConfig</strong> &egrave; la configurazione che ci permette di evitare il packaging</li>
+        <li>Con <strong class="giallino">-Dopenejb.jsf.skip=true</strong> disabilitiamo JSF</li>
         <br/>
-        <li class="fragment">E <strong>-XXaltjvm=dcevm</strong> ??</li>
+        <li class="fragment">E <strong class="arancione">-XXaltjvm=dcevm</strong> ??</li>
     </ul>
 </section>
 
@@ -98,7 +105,7 @@
 <section>
     <h2>Dynamic Code Evolution VM</h2>
 
-    <p>CMD-F9 (CMD-S con IDE legacy) e tutte le nostre modifiche al codice sono disponibili senza dover fare redeploy durante lo sviluppo, se non in caso di cambio di configurazione applicativa</p>
+    <p>CMD-F9 (CMD-S con IDE legacy come Eclipse) e tutte le nostre modifiche al codice sono disponibili senza dover fare redeploy durante lo sviluppo, se non in caso di cambio di configurazione applicativa</p>
 </section>
 
 
