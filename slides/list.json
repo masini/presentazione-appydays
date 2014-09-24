@@ -5,7 +5,7 @@
     {"filename": "ma-come-integrare-i-due-pianeti.html", "attr": {"data-transition": "fade", "data-background-color": "#116622"}},
     {"filename": "integrazione-tra-i-sistemi-di-build.html", "attr": {"data-transition": "default", "data-background-color": "#13579b"}},
     {"filename": "due-runtime-insieme.html", "attr": {"data-transition": "default", "data-background-color": "#440088"}},
-    {"filename": "sviluppo-servizi-enterprise.html", "attr": {"data-transition": "default", "data-background-color": "#530154"}},
-    {"filename": "approcci-alternativi.html", "attr": {"data-transition": "default", "data-background-color": "#678431"}},
-    {"filename": "riferimenti.html", "attr": {"data-transition": "default", "data-background-color": "rgb(130, 80, 130)"}}
+    {"filename": "sviluppo-servizi-enterprise.html", "attr": {"data-transition": "zoom", "data-background-color": "#530154"}},
+    {"filename": "approcci-alternativi.html", "attr": {"data-transition": "slide", "data-background-color": "#678431"}},
+    {"filename": "riferimenti.html", "attr": {"data-transition": "slide", "data-background-color": "rgb(130, 80, 130)"}}
 ]
