@@ -46,15 +46,12 @@ var pro&#120;ySnippet = require('grunt-connect-pro&#120;y/lib/utils').pro&#120;y
         }
       ],
 ..
-..
       livereload: {
         options: {
           middleware: function (connect) {
             return [
               pro&#120;ySnippet,
-              lrSnippet,
-              mountFolder(connect, '.tmp'),
-              mountFolder(connect, yeomanConfig.app)
+..
             ];
           }
         }
